@@ -15,7 +15,7 @@ Este material segue a sequência de conteúdos já trabalhados (arrays, objetos 
 5. Laços específicos — `for...in` e `for...of` (explicação detalhada)
 6. Exemplo integrado: sistema de pedidos (modo texto)
 7. Exercícios com gabarito (respostas comentadas)
-8. Plano de aula para 4 horas
+
 
 ---
 
@@ -315,39 +315,4 @@ Explique com suas palavras quando usar `for...in` e quando usar `for...of`. Dê 
 * `for...of` para valores de arrays/iteráveis (ex.: `for (const v of array) { ... }`).
 
 ---
-
-## 8) Plano de aula (4 horas) — passo a passo
-
-### Abertura (10 min)
-
-* Objetivos do dia: consolidar arrays + funções + loops; entender `for...in` vs `for...of`.
-* Revisão relâmpago (5 minutos) dos conceitos prévios.
-
-### Bloco 1 — Motivação e exemplo (30 min)
-
-* Mostrar o exemplo integrado (sistema de pedidos) em pedaços.
-* Executar no console juntos: listar, adicionar, resumo.
-
-### Bloco 2 — `for...in` e `for...of` (50 min)
-
-* Explicação teórica detalhada (com exemplos).
-* Exercícios práticos pequenos em pares (ex.: percorrer objeto, percorrer array).
-* Corrigir e explicar os erros comuns (usar `for...in` em arrays sem entender índices; confundir índices com valores).
-
-### Intervalo (10 min)
-
-### Bloco 3 — Prática guiada (60 min)
-
-* Alunos implementam funções: `somaArray`, `aprovados`, `contarItens`.
-* Professor circula e corrige problemas lógicos.
-
-### Bloco 4 — Mini desafio integrador (60 min)
-
-* criar pequena extensão do sistema de pedidos:
-
-  * adicionar função `removerItemPorNome(nome)` que remove apenas uma unidade por chamada;
-  * adicionar função `alterarQuantidade(nome, novaQtd)` que ajusta quantidade para um nome (usar reconstrução do pedido).
-
-
-
 
