@@ -238,7 +238,150 @@ for (const [i, valor] of arr.entries()) {
 ### Objetivo
 
 Montar funções que manipulam arrays de objetos (produtos e pedidos), usar `for`, `for...of` e `for...in` quando apropriado, e consolidar boas práticas.
-> vamos fazer um sistema simples de pedidos para uma lanchonete juntos.
+```js loja.js
+// Produtos disponíveis (array de objetos)
+const produtos = [
+  { id: 1, nome: "Coxinha", preco: 6.0 },
+  { id: 2, nome: "Pastel", preco: 5.0 },
+  { id: 3, nome: "Refrigerante", preco: 8.0 },
+  { id: 4, nome: "Suco", preco: 8.0 },
+];
+
+//array de pedidos (array vazio)
+let pedido = [];
+
+// Função: listar todos os produtos
+export function listarProdutos() {
+  console.log("=== Cardápio ===");
+  for (const produto of produtos) {
+    console.log(`
+    #${produto.id} - ${produto.nome} - R${produto.preco.toFixed(2)}
+    `);
+  }
+  console.log("=== === ===");
+}
+
+// Função: adicionar ao pedido por id
+export function adicionarAoPedido(id, quantidade = 1) {
+  // procurar o produto pelo id
+  for (const produto of produtos) {
+    if (id === produto.id) {
+      // adicionar repetidamente conforme a quantidade
+      for (let i = 0; i < quantidade; i++) {
+        pedido.push(produto);
+      }
+      console.log(`${quantidade} x ${produto.nome} adicionado(s) ao pedido.`);
+      return;
+    }
+  }
+  console.log("Produto não encontrado!");
+}
+
+// Função: mostrar resumo do pedido
+export function resumoPedido() {
+  const resumo = {};
+  //   / agrupar por nome usando um objeto (for...of para valores)
+  console.log("======= Resumo =======")
+  for (const item of pedido) {
+    if (resumo[item.nome]) {
+      resumo[item.nome].quantidade += 1;
+      resumo[item.nome].subtotal += item.preco;
+    } else {
+      resumo[item.nome] = { quantidade: 1, subtotal: item.preco };
+    }
+  }
+  // percorrer propriedades do objeto resumo com for...in (chaves)
+  for (const nome in resumo) {
+    const info = resumo[nome];
+    console.log(
+      `${nome} - ${info.quantidade}x - Subtotal: R$ ${info.subtotal.toFixed(2)}`
+    );
+  }
+//   calcular total
+let total = 0;
+
+for (const item of pedido) {
+    total+=item.preco;
+}
+console.log(`Total: R$ ${total.toFixed(2)}`)
+console.log(`=============================`)
+
+}
+```
+```js interface.js
+import { resumoPedido, adicionarAoPedido, listarProdutos } from "./loja.js";
+import input from "readline-sync";
+
+// menu
+function mostarMenu() {
+  console.log(`
+    =========== Menu ============
+    1 - Listar produto
+    2 - Adicionar produto
+    3 - Mostrar Resumo do pedido
+    4 - Sair  
+    =============================  
+    `);
+  const opcao = input.questionInt("Escolha uma opcao: ");
+  return opcao;
+}
+
+function main() {
+  let sair = false;
+  while (!sair) {
+    const opcao = mostarMenu();
+    console.clear();
+    switch (opcao) {
+      case 1:
+        listarProdutos();
+        break;
+      case 2:
+        const id = input.questionInt("Digite o codgo do produto: ");
+        const qtd = input.questionInt("Digite a quantidade: ");
+        adicionarAoPedido(id, qtd);
+        break;
+      case 3:
+        resumoPedido();
+        break;
+      case 4:
+        sair = true;
+        console.log("====================================");
+        console.log("sistema encerrado com sucesso");
+        console.log("====================================");
+        break;
+      default:
+        console.log("Opção invalida!");
+    }
+  }
+}
+
+main();
+
+```
+```js package.json
+
+{
+  "name": "nova-pasta",
+  "version": "1.0.0",
+  "main": "loja.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
+
+```
+```bash
+npm init -y
+npm i readline-sync
+```
 
 ### Observações sobre o exemplo
 
