@@ -255,64 +255,15 @@ Montar funções que manipulam arrays de objetos (produtos e pedidos), usar `for
 
 Criar uma função `somaArray(numeros)` que recebe um array de números e retorna a soma.
 
-**Gabarito**
 
-```js
-function somaArray(numeros) {
-  let total = 0;
-  for (const num of numeros) {
-    total += num;
-  }
-  return total;
-}
-```
 
 ### Exercício 2
 
 Dado o array de objetos `alunos = [{nome: "A", nota: 7}, {nome: "B", nota: 5}]`, criar função `aprovados(alunos)` que retorna um array com os nomes dos alunos com nota >= 6.
 
-**Gabarito**
-
-```js
-function aprovados(alunos) {
-  const res = [];
-  for (const aluno of alunos) {
-    if (aluno.nota >= 6) {
-      res.push(aluno.nome);
-    }
-  }
-  return res;
-}
-```
-
 ### Exercício 3
 
 Com base no `pedido` do exemplo integrado, criar função `contarItens(pedido)` que retorna um objeto com a quantidade por nome (mesmo formato do `resumo`).
 
-**Gabarito**
 
-```js
-function contarItens(pedido) {
-  const contagem = {};
-  for (const item of pedido) {
-    if (contagem[item.nome]) {
-      contagem[item.nome] += 1;
-    } else {
-      contagem[item.nome] = 1;
-    }
-  }
-  return contagem;
-}
-```
-
-### Exercício 4
-
-Explique com suas palavras quando usar `for...in` e quando usar `for...of`. Dê um exemplo de cada.
-
-**Resposta esperada (resumida)**
-
-* `for...in` para chaves de objeto (ex.: `for (const k in objeto) { ... }`).
-* `for...of` para valores de arrays/iteráveis (ex.: `for (const v of array) { ... }`).
-
----
 
