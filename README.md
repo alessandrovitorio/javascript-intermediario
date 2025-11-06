@@ -238,7 +238,8 @@ for (const [i, valor] of arr.entries()) {
 ### Objetivo
 
 Montar funções que manipulam arrays de objetos (produtos e pedidos), usar `for`, `for...of` e `for...in` quando apropriado, e consolidar boas práticas.
-```js loja.js
+> loja.js
+```js 
 // Produtos disponíveis (array de objetos)
 const produtos = [
   { id: 1, nome: "Coxinha", preco: 6.0 },
@@ -308,7 +309,8 @@ console.log(`=============================`)
 
 }
 ```
-```js interface.js
+> interface.js
+```js 
 import { resumoPedido, adicionarAoPedido, listarProdutos } from "./loja.js";
 import input from "readline-sync";
 
@@ -358,7 +360,8 @@ function main() {
 main();
 
 ```
-```js package.json
+> package.json
+```js
 
 {
   "name": "nova-pasta",
@@ -378,9 +381,11 @@ main();
 }
 
 ```
+> terminal
 ```bash
 npm init -y
 npm i readline-sync
+node ./interface.js
 ```
 
 ### Observações sobre o exemplo
