@@ -14,8 +14,7 @@ Este material segue a sequência de conteúdos já trabalhados (arrays, objetos 
 4. Loops básicos — `for` e `while` (revendo)
 5. Laços específicos — `for...in` e `for...of` (explicação detalhada)
 6. Exemplo integrado: sistema de pedidos (modo texto)
-7. Exercícios com gabarito (respostas comentadas)
-
+7. Exercícios
 
 ---
 
@@ -249,7 +248,7 @@ Montar funções que manipulam arrays de objetos (produtos e pedidos), usar `for
 
 ---
 
-## 7) Exercícios (pra sala) e gabarito
+## 7) Exercícios (pra sala)
 
 ### Exercício 1
 
