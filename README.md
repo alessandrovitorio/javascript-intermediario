@@ -2,7 +2,7 @@
 
 ## Visão geral
 
-Este material segue a sequência de conteúdos já trabalhados (arrays, objetos e funções). O objetivo desta unidade (4 horas) é consolidar o uso de arrays e objetos combinados com funções e estruturas de repetição, com atenção especial aos laços `for...in` e `for...of`. O texto foi escrito passo a passo para alunos com dificuldade em abstração — cada conceito tem exemplos claros, explicações lineares e exercícios práticos.
+Este material segue a sequência de conteúdos já trabalhados (arrays, objetos e funções). O objetivo desta aula é consolidar o uso de arrays e objetos combinados com funções e estruturas de repetição, com atenção especial aos laços `for...in` e `for...of`. O texto foi escrito passo a passo para alunos com dificuldade em abstração — cada conceito tem exemplos claros, explicações lineares e exercícios práticos.
 
 ---
 
